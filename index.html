@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive Interactive Profile Card</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" id="card">
+      <!-- TOP: avatar + basic info -->
+      <div class="media">
+        <div class="avatar" aria-label="Profile image">
+          <img id="avatarImg" alt="avatar" class="hidden" />
+          <div id="avatarHint" class="avatar-hint">Select gender to view avatar</div>
+        </div>
+        <div class="info">
+          <div class="name" id="name">Tanuja Allamsetti</div>
+          <div class="title" id="title">Information Science</div>
+          <div class="row">
+            <span class="chip" id="views">Views: 0</span>
+            <span class="chip" id="hobby">Hobby: reading</span>
+            <span class="status" id="availDot" title="Availability"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPECS -->
+      <div class="specs" id="specs">
+        <div class="spec">
+          <div class="spec-k">Location</div>
+          <div class="spec-v" id="specLocation">—</div>
+        </div>
+        <div class="spec">
+          <div class="spec-k">Age</div>
+          <div class="spec-v" id="specAge">—</div>
+        </div>
+        <div class="spec">
+          <div class="spec-k">Experience</div>
+          <div class="spec-v" id="specExp">—</div>
+        </div>
+        <div class="spec">
+          <div class="spec-k">Email</div>
+          <div class="spec-v" id="specEmail">—</div>
+        </div>
+      </div>
+
+      <!-- BIO -->
+      <div class="bio" id="bio">
+        Passionate about clean UI, micro-interactions, and accessible web design. Always learning something new.
+      </div>
+
+      <!-- SKILLS -->
+      <div class="skills">
+        <div class="skills-header">
+          <h3>Skills</h3>
+          <div class="skills-inputs">
+            <input id="skillInput" type="text" placeholder="Add a skill and press +"/>
+            <button class="btn" id="addSkillBtn" aria-label="Add skill">+</button>
+          </div>
+        </div>
+        <div class="skills-list" id="skillsList" aria-live="polite"></div>
+        <div class="note">Tip: click a skill chip to remove it.</div>
+      </div>
+
+      <!-- CONTROLS -->
+      <div class="controls">
+        <div class="grid" id="inputs">
+          <div>
+            <label for="nameInput">Name</label>
+            <input id="nameInput" type="text" placeholder="Enter a name…" value="Venkata Jaya Rami Reddy Bogasamudram" />
+          </div>
+
+          <div>
+            <label for="titleInput">Title</label>
+            <input id="titleInput" type="text" placeholder="Enter a title…" value="Information Science" />
+          </div>
+
+          <div class="span-2">
+            <label for="bioInput">Bio</label>
+            <textarea id="bioInput" placeholder="Short bio…">Passionate about clean UI, micro-interactions, and accessible web design. Always learning something new.</textarea>
+          </div>
+
+          <div>
+            <label for="genderSelect">Gender</label>
+            <select id="genderSelect">
+              <option value="" selected disabled>Choose gender…</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="avatarInput">Avatar (image URL — optional)</label>
+            <input id="avatarInput" type="text" placeholder="https://…/photo.jpg" />
+            <div class="note">If URL is provided, it overrides the random local avatar.</div>
+          </div>
+
+          <div>
+            <label for="locationInput">Location</label>
+            <input id="locationInput" type="text" placeholder="e.g., Missouri, United States" />
+          </div>
+
+          <div>
+            <label for="ageInput">Age</label>
+            <input id="ageInput" type="number" min="0" max="120" placeholder="e.g., 24" />
+          </div>
+
+          <div>
+            <label for="expInput">Experience (years)</label>
+            <input id="expInput" type="number" min="0" max="60" placeholder="e.g., 2" />
+          </div>
+
+          <div>
+            <label for="emailInput">Email</label>
+            <input id="emailInput" type="email" placeholder="name@example.com" />
+          </div>
+
+          <div class="span-2 row s-between">
+            <label class="row" style="gap:.5rem;">
+              <input id="availableToggle" type="checkbox" />
+              <span>Available for work</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <button class="btn primary" id="applyBtn">Apply Changes</button>
+          <button class="btn" id="randomHobbyBtn">Random Hobby</button>
+          <button class="btn" id="addViewBtn">Add a View</button>
+          <label class="row" style="gap:6px; margin-left:auto;">
+            <input id="floatToggle" type="checkbox" />
+            <span class="note">Float layout demo</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
